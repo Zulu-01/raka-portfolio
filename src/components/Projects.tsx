@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import project1Image from "@/assets/project1.jpg";
 import project2Image from "@/assets/project2.jpg";
+import project3Image from "@/assets/project3.jpg";
+import project4Image from "@/assets/project4.jpg";
+import project5Image from "@/assets/project5.jpg";
 
 const Projects = () => {
   const projects = [
@@ -16,6 +19,24 @@ const Projects = () => {
       title: "Cendrawasih School", 
       description: "A fullstack website that made with PHP language with Framework Laravel",
       image: project2Image,
+      sourceLink: "#"
+    },
+    {
+      title: "WilFlix",
+      description: "A Hybrid Movie Mobile Application that made with React Native",
+      image: project3Image,
+      sourceLink: "#"
+    },
+    {
+      title: "E-learning App",
+      description: "A Hybrid Electronic learning Mobile Application that made with React Native, using Supabase as backend services",
+      image: project4Image,
+      sourceLink: "#"
+    },
+    {
+      title: "Zaibatsu's Journal",
+      description: "A Journal Mobile Application that made with Android Studio, using Supabase for Authentication services and also Firebase for Database and file storage",
+      image: project5Image,
       sourceLink: "#"
     }
   ];
@@ -60,7 +81,10 @@ const Projects = () => {
           </div>
 
           <div className="text-center">
-            <Button className="inline-flex items-center gap-2">
+            <Button 
+              className="inline-flex items-center gap-2"
+              onClick={() => window.location.href = '/projects'}
+            >
               See More Projects
               <ArrowRight className="h-4 w-4" />
             </Button>

@@ -15,6 +15,18 @@ const Skills = () => {
     {
       title: "Database",
       skills: ["MySQL", "PhpMyAdmin"]
+    },
+    {
+      title: "Mobile",
+      skills: ["Android Studio (Kotlin)", "React Native"]
+    },
+    {
+      title: "Cloud",
+      skills: ["Firebase", "Supabase"]
+    },
+    {
+      title: "Tools",
+      skills: ["GitHub", "VS Code"]
     }
   ];
 
@@ -31,7 +43,7 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {skillCategories.map((category, index) => (
               <Card key={index} className="shadow-card hover:shadow-soft transition-shadow duration-300">
                 <CardHeader>
@@ -54,7 +66,10 @@ const Skills = () => {
           </div>
 
           <div className="text-center">
-            <Button className="inline-flex items-center gap-2">
+            <Button 
+              className="inline-flex items-center gap-2"
+              onClick={() => window.location.href = '/skills'}
+            >
               See More Skills
               <ArrowRight className="h-4 w-4" />
             </Button>
