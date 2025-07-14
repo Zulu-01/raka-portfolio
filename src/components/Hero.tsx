@@ -1,6 +1,6 @@
 import { Instagram, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profilePhoto from "@/assets/profile-photo.jpg";
+const profilePhoto = "/lovable-uploads/d1ee4d0f-a426-4212-860e-2fc4d34f59bb.png";
 
 const Hero = () => {
   return (
@@ -13,7 +13,7 @@ const Hero = () => {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground">
                 Hello, I'm
                 <br />
-                <span className="text-foreground">Wilbert Bernardi</span>
+                <span className="text-foreground">Raka Satya Wurya Andhika</span>
               </h1>
               <p className="text-xl sm:text-2xl text-muted-foreground">
                 Web and Application Developer
@@ -40,7 +40,7 @@ const Hero = () => {
               <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-soft border-4 border-background">
                 <img
                   src={profilePhoto}
-                  alt="Wilbert Bernardi"
+                  alt="Raka Satya Wurya Andhika"
                   className="w-full h-full object-cover"
                 />
               </div>

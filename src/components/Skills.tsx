@@ -15,18 +15,6 @@ const Skills = () => {
     {
       title: "Database",
       skills: ["MySQL", "PhpMyAdmin"]
-    },
-    {
-      title: "Mobile",
-      skills: ["Android Studio (Kotlin)", "React Native"]
-    },
-    {
-      title: "Cloud",
-      skills: ["Firebase", "Supabase"]
-    },
-    {
-      title: "Tools",
-      skills: ["GitHub", "VS Code"]
     }
   ];
 

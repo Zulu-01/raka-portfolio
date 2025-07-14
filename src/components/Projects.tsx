@@ -20,24 +20,6 @@ const Projects = () => {
       description: "A fullstack website that made with PHP language with Framework Laravel",
       image: project2Image,
       sourceLink: "#"
-    },
-    {
-      title: "WilFlix",
-      description: "A Hybrid Movie Mobile Application that made with React Native",
-      image: project3Image,
-      sourceLink: "#"
-    },
-    {
-      title: "E-learning App",
-      description: "A Hybrid Electronic learning Mobile Application that made with React Native, using Supabase as backend services",
-      image: project4Image,
-      sourceLink: "#"
-    },
-    {
-      title: "Zaibatsu's Journal",
-      description: "A Journal Mobile Application that made with Android Studio, using Supabase for Authentication services and also Firebase for Database and file storage",
-      image: project5Image,
-      sourceLink: "#"
     }
   ];
 

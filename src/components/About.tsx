@@ -19,11 +19,11 @@ const About = () => {
           <Card className="p-8 sm:p-12 shadow-card">
             <div className="space-y-6 text-center">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Hello, I'm a Computer Science student with a passion for web development. I have an interest with frontend technologies like ReactJS. Currently, I am studying Cloud technologies like Firebase and Supabase and also learning about backend like PHP and Laravel. I am also interested to learn about React Native and Android Studio for mobile app development.
+                A dedicated and results-driven Computer Science student with proven expertise in modern web development technologies. I bring strong analytical skills, attention to detail, and a collaborative mindset that drives successful project outcomes. My passion for creating innovative digital solutions aligns perfectly with organizational goals.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I am working on several projects to enhance my skills and knowledge in these areas. I am always eager to learn new technologies and improve my skills. I have an experienced in designing responsive and functional web solutions, both individually and in teams.
+                With hands-on experience in full-stack development and a track record of delivering high-quality applications, I am committed to continuous learning and professional growth. I thrive in team environments and am eager to contribute my technical skills and fresh perspective to drive company success.
               </p>
 
               <div className="pt-4">
