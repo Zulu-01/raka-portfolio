@@ -1,28 +1,28 @@
 import { Building, Github, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import project1Image from "@/assets/project1.jpg";
-import project2Image from "@/assets/project2.jpg";
-import project3Image from "@/assets/project3.jpg";
+import hidgemsImage from "@/assets/hidgems-indo.jpg";
+import cendrawasihImage from "@/assets/cendrawasih-school.jpg";
+import elearningImage from "@/assets/elearning-app.jpg";
 
 const Projects = () => {
   const projects = [
     {
       title: "HidGems Indo",
       description: "A frontend website that made with HTML, CSS, JavaScript language with Framework ReactJS",
-      image: project1Image,
+      image: hidgemsImage,
       sourceLink: "https://github.com/JoyAbadi31/HidGemsIndonesia"
     },
     {
       title: "Cendrawasih School", 
       description: "A fullstack website that made with PHP language with Framework Laravel",
-      image: project2Image,
+      image: cendrawasihImage,
       sourceLink: "https://github.com/AdliGR/Project_UAS_Cendrawasih"
     },
     {
       title: "E-learning App",
       description: "A cross-platform educational application for online learning and course management",
-      image: project3Image,
+      image: elearningImage,
       sourceLink: "https://github.com/richbruh/uas-crossplat"
     }
   ];
