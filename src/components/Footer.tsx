@@ -21,7 +21,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-background/80 text-center">
-            © 2025 WEBE. All rights reserved.
+            © 2025 Raka Satya Wurya Andhika. All rights reserved.
           </p>
         </div>
       </div>

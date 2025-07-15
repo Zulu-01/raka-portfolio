@@ -54,7 +54,7 @@ const Contact = () => {
                     <Mail className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">Email</h3>
-                  <p className="text-muted-foreground">wilbertbernardi2004@gmail.com</p>
+                  <p className="text-muted-foreground">raka.satya.andhika@gmail.com</p>
                   <Button variant="link" className="text-primary">
                     Write Me <ArrowRight className="h-4 w-4 ml-1" />
                   </Button>
