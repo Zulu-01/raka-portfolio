@@ -16,8 +16,17 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Create mailto link to send email
+    const mailtoLink = `mailto:rakaicha1@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    
+    // Open email client
+    window.open(mailtoLink);
+    
     toast({
       title: "Message Sent!",
       description: "Thank you for your message. I'll get back to you soon.",
@@ -54,7 +63,7 @@ const Contact = () => {
                     <Mail className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">Email</h3>
-                  <p className="text-muted-foreground">raka.satya.andhika@gmail.com</p>
+                  <p className="text-muted-foreground">rakaicha1@gmail.com</p>
                   <Button variant="link" className="text-primary">
                     Write Me <ArrowRight className="h-4 w-4 ml-1" />
                   </Button>
@@ -67,7 +76,7 @@ const Contact = () => {
                     <MessageCircle className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">Whatsapp</h3>
-                  <p className="text-muted-foreground">085261577958</p>
+                  <p className="text-muted-foreground">081223927487</p>
                   <Button variant="link" className="text-primary">
                     Write Me <ArrowRight className="h-4 w-4 ml-1" />
                   </Button>
