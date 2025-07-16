@@ -64,7 +64,11 @@ const Contact = () => {
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">Email</h3>
                   <p className="text-muted-foreground">rakaicha1@gmail.com</p>
-                  <Button variant="link" className="text-primary">
+                  <Button 
+                    variant="link" 
+                    className="text-primary"
+                    onClick={() => window.open('https://mail.google.com/mail/u/0/#inbox?compose=new', '_blank')}
+                  >
                     Write Me <ArrowRight className="h-4 w-4 ml-1" />
                   </Button>
                 </CardContent>
@@ -75,9 +79,13 @@ const Contact = () => {
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
                     <MessageCircle className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">Whatsapp</h3>
+                  <h3 className="text-xl font-semibold text-foreground">WhatsApp</h3>
                   <p className="text-muted-foreground">081223927487</p>
-                  <Button variant="link" className="text-primary">
+                  <Button 
+                    variant="link" 
+                    className="text-primary"
+                    onClick={() => window.open('https://wa.me/6281223927487', '_blank')}
+                  >
                     Write Me <ArrowRight className="h-4 w-4 ml-1" />
                   </Button>
                 </CardContent>
