@@ -3,43 +3,29 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import project1Image from "@/assets/project1.jpg";
-import project2Image from "@/assets/project2.jpg";
-import project3Image from "@/assets/project3.jpg";
-import project4Image from "@/assets/project4.jpg";
-import project5Image from "@/assets/project5.jpg";
+import hidgemsImage from "@/assets/hidgems-indo.jpg";
+import cendrawasihImage from "@/assets/cendrawasih-school.jpg";
+import elearningImage from "@/assets/elearning-app.jpg";
 
 const ProjectsPage = () => {
   const projects = [
     {
       title: "HidGems Indo",
       description: "A frontend website that made with HTML, CSS, JavaScript language with Framework ReactJS",
-      image: project1Image,
-      sourceLink: "#"
+      image: hidgemsImage,
+      sourceLink: "https://github.com/JoyAbadi31/HidGemsIndonesia"
     },
     {
       title: "Cendrawasih School", 
       description: "A fullstack website that made with PHP language with Framework Laravel",
-      image: project2Image,
-      sourceLink: "#"
-    },
-    {
-      title: "WilFlix",
-      description: "A Hybrid Movie Mobile Application that made with React Native",
-      image: project3Image,
-      sourceLink: "#"
+      image: cendrawasihImage,
+      sourceLink: "https://github.com/AdliGR/Project_UAS_Cendrawasih"
     },
     {
       title: "E-learning App",
-      description: "A Hybrid Electronic learning Mobile Application that made with React Native, using Supabase as backend services",
-      image: project4Image,
-      sourceLink: "#"
-    },
-    {
-      title: "Zaibatsu's Journal",
-      description: "A Journal Mobile Application that made with Android Studio, using Supabase for Authentication services and also Firebase for Database and file storage",
-      image: project5Image,
-      sourceLink: "#"
+      description: "A cross-platform educational application for online learning and course management",
+      image: elearningImage,
+      sourceLink: "https://github.com/richbruh/uas-crossplat"
     }
   ];
 
@@ -76,7 +62,11 @@ const ProjectsPage = () => {
                     <p className="text-muted-foreground">
                       {project.description}
                     </p>
-                    <Button variant="outline" className="inline-flex items-center gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="inline-flex items-center gap-2"
+                      onClick={() => window.open(project.sourceLink, '_blank')}
+                    >
                       <Github className="h-4 w-4" />
                       Source Code
                     </Button>
