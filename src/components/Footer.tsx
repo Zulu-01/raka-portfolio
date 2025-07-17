@@ -8,13 +8,28 @@ const Footer = () => {
         <div className="flex flex-col items-center space-y-4">
           {/* Social Links */}
           <div className="flex space-x-4">
-            <Button variant="secondary" size="icon" className="rounded-full bg-background/10 hover:bg-background/20 text-background border-background/20">
+            <Button 
+              variant="secondary" 
+              size="icon" 
+              className="rounded-full bg-background/10 hover:bg-background/20 text-background border-background/20"
+              onClick={() => window.open('https://www.instagram.com/raka_s.w.a.t/', '_blank')}
+            >
               <Instagram className="h-5 w-5" />
             </Button>
-            <Button variant="secondary" size="icon" className="rounded-full bg-background/10 hover:bg-background/20 text-background border-background/20">
+            <Button 
+              variant="secondary" 
+              size="icon" 
+              className="rounded-full bg-background/10 hover:bg-background/20 text-background border-background/20"
+              onClick={() => window.open('https://github.com/Zulu-11', '_blank')}
+            >
               <Github className="h-5 w-5" />
             </Button>
-            <Button variant="secondary" size="icon" className="rounded-full bg-background/10 hover:bg-background/20 text-background border-background/20">
+            <Button 
+              variant="secondary" 
+              size="icon" 
+              className="rounded-full bg-background/10 hover:bg-background/20 text-background border-background/20"
+              onClick={() => window.open('https://www.linkedin.com/in/raka-satya-wurya-andhika-63873932a/', '_blank')}
+            >
               <Linkedin className="h-5 w-5" />
             </Button>
           </div>
