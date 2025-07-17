@@ -19,11 +19,7 @@ const About = () => {
           <Card className="p-8 sm:p-12 shadow-card">
             <div className="space-y-6 text-center">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                A dedicated and results-driven Computer Science student with proven expertise in modern web development technologies. I bring strong analytical skills, attention to detail, and a collaborative mindset that drives successful project outcomes. My passion for creating innovative digital solutions aligns perfectly with organizational goals.
-              </p>
-
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                With hands-on experience in full-stack development and a track record of delivering high-quality applications, I am committed to continuous learning and professional growth. I thrive in team environments and am eager to contribute my technical skills and fresh perspective to drive company success.
+                A student who is eager to learn new things, willing to take on challenges, and responsible in completing assigned tasks. Currently, I am deepening my knowledge in the field of Computer Science through university studies and online courses. In my studies in Computer Science, I am particularly interested in UI/UX Design and Web Development. I have a talent for Web Development, with analytical skills, creativity in designing interfaces, and an understanding of modern web technologies. I have experience in designing responsive and functional web solutions, both individually and as part of a professional team.
               </p>
 
               <div className="pt-4">
