@@ -56,7 +56,7 @@ const Hero = () => {
                 <img
                   src={profilePhoto}
                   alt="Raka Satya Wurya Andhika"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
             </div>
