@@ -40,6 +40,11 @@ All colors MUST be HSL.
     --shadow-soft: 0 4px 20px -2px hsl(220 13% 91% / 0.3);
     --shadow-card: 0 2px 10px -1px hsl(220 13% 91% / 0.2);
 
+    --cycling-hero-background: url('/lovable-uploads/c4c477af-8ed5-4d69-81c3-1eef01ea4705.png'), 
+                               url('/lovable-uploads/2aa01748-52de-4804-bd2f-344aa8fc89c6.png'), 
+                               url('/lovable-uploads/b9499521-37ec-48ab-81c3-3c2364615681.png'), 
+                               url('/lovable-uploads/9f88c9f4-8888-4776-b662-60964f30ce6d.png');
+
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
@@ -105,5 +110,42 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .bg-cycling-hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-image: url('/lovable-uploads/c4c477af-8ed5-4d69-81c3-1eef01ea4705.png');
+  }
+
+  .bg-cycling-hero::before,
+  .bg-cycling-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .bg-cycling-hero::before {
+    background-image: url('/lovable-uploads/2aa01748-52de-4804-bd2f-344aa8fc89c6.png');
+    animation: hero-bg-cycle 16s infinite;
+    animation-delay: 0s;
+  }
+
+  .bg-cycling-hero::after {
+    background-image: url('/lovable-uploads/b9499521-37ec-48ab-81c3-3c2364615681.png');
+    animation: hero-bg-cycle 16s infinite;
+    animation-delay: 8s;
   }
 }

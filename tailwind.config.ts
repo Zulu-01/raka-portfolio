@@ -64,7 +64,8 @@ export default {
 				}
 			},
 			backgroundImage: {
-				'hero-gradient': 'var(--hero-gradient)'
+				'hero-gradient': 'var(--hero-gradient)',
+				'cycling-hero': 'var(--cycling-hero-background)'
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
@@ -91,11 +92,17 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'hero-bg-cycle': {
+					'0%, 20%': { opacity: '1' },
+					'25%, 95%': { opacity: '0' },
+					'100%': { opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'hero-bg-cycle': 'hero-bg-cycle 16s infinite'
 			}
 		}
 	},
