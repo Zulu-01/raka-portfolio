@@ -42,117 +42,140 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-hero-gradient">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-32 bg-gradient-secondary relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute top-1/4 left-10 w-64 h-64 bg-gradient-primary rounded-full opacity-10 blur-3xl animate-float"></div>
+      <div className="absolute bottom-1/4 right-10 w-48 h-48 bg-accent rounded-full opacity-10 blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 mb-4">
+          <div className="text-center mb-20 animate-fade-in-up">
+            <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 glass-card rounded-full">
               <MessageSquare className="h-6 w-6 text-primary" />
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-                Contact Me
-              </h2>
+              <span className="text-primary font-medium">Get In Touch</span>
             </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6">
+              Let's Create Something
+              <span className="gradient-text block">Amazing Together</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Have a project in mind? I'd love to hear from you and discuss how we can bring your ideas to life.
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Information */}
-            <div className="space-y-8">
-              <Card className="shadow-card">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                    <Mail className="h-8 w-8 text-primary" />
+            <div className="space-y-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <div className="glass-card p-10 rounded-2xl hover-lift text-center relative group">
+                <div className="absolute inset-0 bg-gradient-primary rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div className="relative">
+                  <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-glow">
+                    <Mail className="h-10 w-10 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">Email</h3>
-                  <p className="text-muted-foreground">rakaicha1@gmail.com</p>
+                  <h3 className="text-2xl font-heading font-bold text-foreground mb-4">Email</h3>
+                  <p className="text-muted-foreground mb-6 text-lg">rakaicha1@gmail.com</p>
                   <Button 
-                    variant="link" 
-                    className="text-primary"
+                    variant="outline"
+                    size="lg"
+                    className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover-lift animated-border"
                     onClick={() => window.open('https://mail.google.com/mail/u/0/#inbox?compose=new', '_blank')}
                   >
-                    Write Me <ArrowRight className="h-4 w-4 ml-1" />
+                    <span className="mr-2">Send Email</span>
+                    <ArrowRight className="h-5 w-5" />
                   </Button>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
-              <Card className="shadow-card">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                    <MessageCircle className="h-8 w-8 text-primary" />
+              <div className="glass-card p-10 rounded-2xl hover-lift text-center relative group">
+                <div className="absolute inset-0 bg-gradient-primary rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div className="relative">
+                  <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-glow">
+                    <MessageCircle className="h-10 w-10 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">WhatsApp</h3>
-                  <p className="text-muted-foreground">081223927487</p>
+                  <h3 className="text-2xl font-heading font-bold text-foreground mb-4">WhatsApp</h3>
+                  <p className="text-muted-foreground mb-6 text-lg">+62 812-2392-7487</p>
                   <Button 
-                    variant="link" 
-                    className="text-primary"
+                    variant="outline"
+                    size="lg"
+                    className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover-lift animated-border"
                     onClick={() => window.open('https://wa.me/6281223927487', '_blank')}
                   >
-                    Write Me <ArrowRight className="h-4 w-4 ml-1" />
+                    <span className="mr-2">Chat Now</span>
+                    <ArrowRight className="h-5 w-5" />
                   </Button>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
 
             {/* Contact Form */}
-            <Card className="shadow-card">
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
+            <div className="glass-card p-10 rounded-2xl hover-lift animate-scale-in" style={{animationDelay: '0.3s'}}>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <Label htmlFor="name" className="text-foreground font-medium text-lg">Name</Label>
                     <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Insert your name"
+                      placeholder="Your full name"
+                      className="h-14 text-lg rounded-xl border-2 border-muted-foreground/20 focus:border-primary bg-background/50"
                       required
                     />
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                  <div className="space-y-3">
+                    <Label htmlFor="email" className="text-foreground font-medium text-lg">Email</Label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="Insert your email"
+                      placeholder="your.email@example.com"
+                      className="h-14 text-lg rounded-xl border-2 border-muted-foreground/20 focus:border-primary bg-background/50"
                       required
                     />
                   </div>
+                </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="Write your subject"
-                      required
-                    />
-                  </div>
+                <div className="space-y-3">
+                  <Label htmlFor="subject" className="text-foreground font-medium text-lg">Subject</Label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="What's this about?"
+                    className="h-14 text-lg rounded-xl border-2 border-muted-foreground/20 focus:border-primary bg-background/50"
+                    required
+                  />
+                </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Message"
-                      required
-                    />
-                  </div>
+                <div className="space-y-3">
+                  <Label htmlFor="message" className="text-foreground font-medium text-lg">Message</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project or ideas..."
+                    className="text-lg rounded-xl border-2 border-muted-foreground/20 focus:border-primary bg-background/50 resize-none"
+                    required
+                  />
+                </div>
 
-                  <Button type="submit" className="w-full inline-flex items-center gap-2">
-                    Send Message
-                    <Send className="h-4 w-4" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+                <Button 
+                  type="submit" 
+                  size="lg"
+                  className="w-full bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow hover-lift py-6 text-lg font-medium"
+                >
+                  <span className="mr-2">Send Message</span>
+                  <Send className="h-5 w-5" />
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

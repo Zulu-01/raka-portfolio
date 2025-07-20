@@ -36,45 +36,75 @@ const Hero = () => {
           style={{ backgroundImage: `url(${image})` }}
         />
       ))}
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Modern gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/60 via-background/40 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+          <div className="space-y-10 animate-fade-in-up">
+            <div className="space-y-6">
+              <div className="inline-block">
+                <span className="px-4 py-2 bg-gradient-primary text-white rounded-full text-sm font-medium backdrop-blur-sm animate-glow-pulse">
+                  Available for Work
+                </span>
+              </div>
+              
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-foreground leading-tight">
                 Hello, I'm
                 <br />
-                <span className="text-white">Raka Satya Wurya Andhika</span>
+                <span className="gradient-text">Raka Satya</span>
+                <br />
+                <span className="text-muted-foreground text-4xl sm:text-5xl lg:text-6xl">Wurya Andhika</span>
               </h1>
-              <p className="text-xl sm:text-2xl text-white/80">
-                Web and Application Developer
+              
+              <p className="text-xl sm:text-2xl text-muted-foreground font-light max-w-lg">
+                Creative Web Developer crafting digital experiences with modern technologies
               </p>
             </div>
 
-            {/* Social Links */}
-            <div className="flex space-x-4">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                variant="secondary" 
+                size="lg"
+                className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow hover-lift px-8 py-4 text-lg font-medium"
+                onClick={() => scrollToSection('projects')}
+              >
+                View My Work
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover-lift px-8 py-4 text-lg"
+                onClick={() => scrollToSection('contact')}
+              >
+                Get In Touch
+              </Button>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex space-x-4 pt-4">
+              <Button 
+                variant="ghost" 
                 size="icon" 
-                className="rounded-full"
+                className="w-12 h-12 rounded-xl hover:bg-muted/20 hover-lift glass-card"
                 onClick={() => window.open('https://www.instagram.com/raka_s.w.a.t/', '_blank')}
               >
                 <Instagram className="h-5 w-5" />
               </Button>
               <Button 
-                variant="secondary" 
+                variant="ghost" 
                 size="icon" 
-                className="rounded-full"
+                className="w-12 h-12 rounded-xl hover:bg-muted/20 hover-lift glass-card"
                 onClick={() => window.open('https://github.com/Zulu-11', '_blank')}
               >
                 <Github className="h-5 w-5" />
               </Button>
               <Button 
-                variant="secondary" 
+                variant="ghost" 
                 size="icon" 
-                className="rounded-full"
+                className="w-12 h-12 rounded-xl hover:bg-muted/20 hover-lift glass-card"
                 onClick={() => window.open('https://www.linkedin.com/in/raka-satya-wurya-andhika-63873932a/', '_blank')}
               >
                 <Linkedin className="h-5 w-5" />
@@ -83,14 +113,23 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Profile Image */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-soft border-4 border-background">
-                <img
-                  src={profilePhoto}
-                  alt="Raka Satya Wurya Andhika"
-                  className="w-full h-full object-cover object-top"
-                />
+          <div className="flex justify-center lg:justify-end animate-scale-in">
+            <div className="relative group">
+              {/* Glow effect behind image */}
+              <div className="absolute -inset-4 bg-gradient-primary rounded-full opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500"></div>
+              
+              <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem]">
+                <div className="w-full h-full rounded-2xl overflow-hidden glass-card hover-lift">
+                  <img
+                    src={profilePhoto}
+                    alt="Raka Satya Wurya Andhika"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                
+                {/* Floating accent elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-primary rounded-full animate-float opacity-60"></div>
+                <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-accent/20 rounded-full animate-float opacity-40" style={{animationDelay: '1s'}}></div>
               </div>
             </div>
           </div>
@@ -98,6 +137,11 @@ const Hero = () => {
       </div>
     </section>
   );
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
 };
 
 export default Hero;

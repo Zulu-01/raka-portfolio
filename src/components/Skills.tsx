@@ -19,47 +19,74 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-hero-gradient">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-32 bg-gradient-secondary relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
+      <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-accent/20 to-transparent"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 mb-4">
+          <div className="text-center mb-20 animate-fade-in-up">
+            <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 glass-card rounded-full">
               <Code className="h-6 w-6 text-primary" />
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-                Technical Skills
-              </h2>
+              <span className="text-primary font-medium">Technical Expertise</span>
             </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6">
+              My Technology
+              <span className="gradient-text block">Arsenal</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Crafting digital experiences with modern tools and technologies
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {skillCategories.map((category, index) => (
-              <Card key={index} className="shadow-card hover:shadow-soft transition-shadow duration-300">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-foreground">
-                    {category.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
+              <div 
+                key={index} 
+                className="glass-card p-8 rounded-2xl hover-lift animate-scale-in relative group"
+                style={{animationDelay: `${0.1 * index}s`}}
+              >
+                {/* Hover glow effect */}
+                <div className="absolute inset-0 bg-gradient-primary rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center">
+                      <Code className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-heading font-bold text-foreground">
+                      {category.title}
+                    </h3>
+                  </div>
+                  
+                  <div className="space-y-4">
                     {category.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex} className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        <span className="text-muted-foreground">{skill}</span>
+                      <div 
+                        key={skillIndex} 
+                        className="flex items-center gap-3 group/skill hover:translate-x-2 transition-transform duration-300"
+                      >
+                        <div className="w-2 h-2 bg-primary rounded-full group-hover/skill:scale-125 transition-transform duration-300"></div>
+                        <span className="text-muted-foreground group-hover/skill:text-foreground transition-colors duration-300 font-medium">
+                          {skill}
+                        </span>
                       </div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="text-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
             <Button 
-              className="inline-flex items-center gap-2"
+              size="lg"
+              variant="outline"
+              className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover-lift px-8 py-4 text-lg animated-border"
               onClick={() => window.location.href = '/skills'}
             >
-              See More Skills
-              <ArrowRight className="h-4 w-4" />
+              <span className="mr-2">Explore All Skills</span>
+              <ArrowRight className="h-5 w-5" />
             </Button>
           </div>
         </div>
