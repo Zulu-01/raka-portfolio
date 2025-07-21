@@ -3,6 +3,22 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 const About = () => {
+  const downloadCV = () => {
+    // Download both CV images
+    const cvImages = [
+      '/lovable-uploads/3a996861-b528-479e-ba4b-2d85a6441681.png',
+      '/lovable-uploads/cf706e14-f5a8-4e8e-a75a-42a0e1f833bc.png'
+    ];
+    
+    cvImages.forEach((imageUrl, index) => {
+      const link = document.createElement('a');
+      link.href = imageUrl;
+      link.download = `Raka_Satya_CV_Page_${index + 1}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  };
   return (
     <section id="about" className="py-32 bg-background relative overflow-hidden">
       {/* Background accent */}
@@ -41,6 +57,7 @@ const About = () => {
                   <Button 
                     size="lg"
                     className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow hover-lift px-8 py-4 text-lg font-medium"
+                    onClick={downloadCV}
                   >
                     <FileText className="h-5 w-5 mr-2" />
                     Download CV
