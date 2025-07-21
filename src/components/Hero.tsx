@@ -64,24 +64,6 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg"
-                className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow hover-lift px-8 py-4 text-lg font-medium"
-                onClick={() => scrollToSection('projects')}
-              >
-                View My Work
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover-lift px-8 py-4 text-lg"
-                onClick={() => scrollToSection('contact')}
-              >
-                Get In Touch
-              </Button>
-            </div>
 
             {/* Social Links */}
             <div className="flex space-x-4 pt-4">
