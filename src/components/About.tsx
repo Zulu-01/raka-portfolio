@@ -71,9 +71,9 @@ const About = () => {
             <div className="space-y-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               {[
                 { label: "Years of Learning", value: "3+", desc: "Continuous learning in web development" },
-                { label: "Projects Completed", value: "15+", desc: "From concept to deployment" },
+                { label: "Projects Completed", value: "3+", desc: "From concept to deployment" },
                 { label: "Technologies", value: "10+", desc: "Modern web development stack" },
-                { label: "Team Projects", value: "5+", desc: "Collaborative development experience" }
+                { label: "Team Projects", value: "3+", desc: "Collaborative development experience" }
               ].map((stat, index) => (
                 <div key={index} className="glass-card p-6 rounded-xl hover-lift" style={{animationDelay: `${0.1 * index}s`}}>
                   <div className="flex items-center gap-4">
