@@ -5,34 +5,21 @@ import JSZip from 'jszip';
 
 const About = () => {
   const downloadCV = async () => {
-    try {
-      const zip = new JSZip();
-      
-      // CV image URLs
-      const cvImages = [
-        { url: '/lovable-uploads/3a996861-b528-479e-ba4b-2d85a6441681.png', name: 'Raka_Satya_CV_Page_1.png' },
-        { url: '/lovable-uploads/cf706e14-f5a8-4e8e-a75a-42a0e1f833bc.png', name: 'Raka_Satya_CV_Page_2.png' }
-      ];
-      
-      // Fetch and add each image to the ZIP
-      for (const image of cvImages) {
-        const response = await fetch(image.url);
-        const blob = await response.blob();
-        zip.file(image.name, blob);
-      }
-      
-      // Generate ZIP file and trigger download
-      const zipBlob = await zip.generateAsync({ type: 'blob' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(zipBlob);
-      link.download = 'Raka_Satya_CV.zip';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(link.href);
-    } catch (error) {
-      console.error('Error creating CV ZIP file:', error);
-    }
+  try {
+    const response = await fetch('/lovable-uploads/Raka Satya Wurya Andhika.pdf');
+    const blob = await response.blob();
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'Raka_Satya_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(link.href);
+  } catch (error) {
+    console.error('Error downloading CV PDF:', error);
+  }
+};
+
   };
   return (
     <section id="about" className="py-32 bg-background relative overflow-hidden">
