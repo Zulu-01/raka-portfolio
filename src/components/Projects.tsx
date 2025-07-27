@@ -1,6 +1,7 @@
 import { Building, Github, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from 'react-router-dom'
 import hidgemsImage from "@/assets/hidgems-indo.jpg";
 import cendrawasihImage from "@/assets/cendrawasih-school.jpg";
 import elearningImage from "@/assets/elearning-app.jpg";
@@ -113,10 +114,11 @@ const Projects = () => {
             <Button 
               size="lg"
               className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow hover-lift px-8 py-4 text-lg font-medium"
-              onClick={() => window.location.href = '/projects'}
             >
-              <span className="mr-2">Explore All Projects</span>
-              <ArrowRight className="h-5 w-5" />
+              <Link to="/projects">
+    <span className="mr-2">Explore All Projects</span>
+    <ArrowRight className="h-5 w-5" />
+  </Link>
             </Button>
           </div>
         </div>
