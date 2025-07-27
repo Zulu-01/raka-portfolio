@@ -1,6 +1,7 @@
 import { Code, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from 'react-router-dom'
 
 const Skills = () => {
   const skillCategories = [
@@ -83,10 +84,11 @@ const Skills = () => {
               size="lg"
               variant="outline"
               className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover-lift px-8 py-4 text-lg animated-border"
-              onClick={() => window.location.href = '/skills'}
             >
-              <span className="mr-2">Explore All Skills</span>
-              <ArrowRight className="h-5 w-5" />
+              <Link to="/skills" className="flex items-center">
+    <span className="mr-2">Explore All Skills</span>
+    <ArrowRight className="h-5 w-5" />
+  </Link>
             </Button>
           </div>
         </div>
