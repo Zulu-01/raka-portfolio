@@ -4,21 +4,21 @@ import { Card } from "@/components/ui/card";
 import JSZip from 'jszip';
 
 const About = () => {
-  const downloadCV = async () => {
-  try {
-    const response = await fetch('/lovable-uploads/Raka Satya Wurya Andhika.pdf');
-    const blob = await response.blob();
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'Raka_Satya_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(link.href);
-  } catch (error) {
-    console.error('Error downloading CV PDF:', error);
-  }
+  const downloadCV = () => {
+  // NOTE: Make sure the path and filename here exactly match
+  // the file in your `public` (or Assets) folder.
+  const filePath = '/Assets/CV/Raka%20Satya%20Wurya%20Andhika.pdf';
+  const fileName = 'Raka_Satya_CV.pdf';
+
+  // Create an <a> tag, set its href/download, click it
+  const link = document.createElement('a');
+  link.href = filePath;
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
+
 
   };
   return (
