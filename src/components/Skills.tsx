@@ -79,18 +79,14 @@ const Skills = () => {
             ))}
           </div>
 
-          <div className="text-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover-lift px-8 py-4 text-lg animated-border"
-            >
-              <Link to="/skills" className="flex items-center">
-    <span className="mr-2">Explore All Skills</span>
-    <ArrowRight className="h-5 w-5" />
+          <div className="text-center">
+  <Link to="/skills">
+    <Button size="lg" variant="outline" className="…">
+      <span className="mr-2">Explore All Skills</span>
+      <ArrowRight className="h-5 w-5" />
+    </Button>
   </Link>
-            </Button>
-          </div>
+</div>
         </div>
       </div>
     </section>
