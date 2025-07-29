@@ -1,26 +1,23 @@
 import { User, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import JSZip from 'jszip';
+// import { Card } from "@/components/ui/card"; // removed because it wasn’t used
 
 const About = () => {
   const downloadCV = () => {
-  // NOTE: Make sure the path and filename here exactly match
-  // the file in your `public` (or Assets) folder.
-  const filePath = '/Assets/CV/Raka%20Satya%20Wurya%20Andhika.pdf';
-  const fileName = 'Raka_Satya_CV.pdf';
+    // NOTE: Make sure the path and filename here exactly match
+    // the file in your `public` (or Assets) folder.
+    const filePath = '/Assets/CV/Raka%20Satya%20Wurya%20Andhika.pdf';
+    const fileName = 'Raka_Satya_CV.pdf';
 
-  // Create an <a> tag, set its href/download, click it
-  const link = document.createElement('a');
-  link.href = filePath;
-  link.download = fileName;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
-
-
+    // Create an <a> tag, set its href/download, click it
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
+
   return (
     <section id="about" className="py-32 bg-background relative overflow-hidden">
       {/* Background accent */}
@@ -68,14 +65,14 @@ const About = () => {
               </div>
             </div>
 
-            <div className="space-y-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               {[
                 { label: "Years of Learning", value: "3+", desc: "Continuous learning in web development" },
                 { label: "Projects Completed", value: "3+", desc: "From concept to deployment" },
                 { label: "Technologies", value: "10+", desc: "Modern web development stack" },
                 { label: "Team Projects", value: "3+", desc: "Collaborative development experience" }
               ].map((stat, index) => (
-                <div key={index} className="glass-card p-6 rounded-xl hover-lift" style={{animationDelay: `${0.1 * index}s`}}>
+                <div key={index} className="glass-card p-6 rounded-xl hover-lift" style={{ animationDelay: `${0.1 * index}s` }}>
                   <div className="flex items-center gap-4">
                     <div className="text-3xl font-heading font-bold gradient-text">
                       {stat.value}
