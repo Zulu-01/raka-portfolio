@@ -123,6 +123,10 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-body;
     font-feature-settings: 'rlig' 1, 'calt' 1;
@@ -132,7 +136,20 @@ All colors MUST be HSL.
     @apply font-heading;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
+
 
 @layer components {
   .bg-cycling-hero {
