@@ -123,6 +123,10 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-body;
     font-feature-settings: 'rlig' 1, 'calt' 1;
@@ -132,7 +136,20 @@ All colors MUST be HSL.
     @apply font-heading;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
+
 
 @layer components {
   .bg-cycling-hero {
@@ -224,5 +241,54 @@ All colors MUST be HSL.
 
   .animated-border:hover::before {
     opacity: 1;
+  }
+}
+@layer components {
+  /* Subtle dotted grid backdrop for sections */
+  .grid-backdrop {
+    background-image: radial-gradient(hsl(var(--border) / 0.9) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Fades the edges of a marquee track */
+  .marquee-mask {
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  /* Interactive card that lifts and glows in one fluid motion */
+  .fluid-card {
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.5s ease;
+  }
+
+  .fluid-card:hover {
+    transform: translateY(-10px) scale(1.015);
+    box-shadow: var(--shadow-float), var(--shadow-glow);
+    border-color: hsl(var(--primary) / 0.4);
+  }
+
+  /* Gradient underline that grows on hover */
+  .link-sweep {
+    position: relative;
+  }
+
+  .link-sweep::after {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.35rem;
+    height: 2px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-sweep:hover::after,
+  .link-sweep[data-active="true"]::after {
+    transform: scaleX(1);
   }
 }

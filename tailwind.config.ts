@@ -105,6 +105,15 @@ export default {
 					'0%, 100%': { boxShadow: 'var(--shadow-glow)' },
 					'50%': { boxShadow: '0 0 120px hsl(var(--primary) / 0.25)' }
 				},
+				'marquee': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' }
+				},
+				'blob-drift': {
+					'0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
+					'33%': { transform: 'translate(30px, -20px) scale(1.08)' },
+					'66%': { transform: 'translate(-20px, 20px) scale(0.95)' }
+				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
 					'50%': { transform: 'translateY(-6px)' }
@@ -118,7 +127,9 @@ export default {
 				'fade-in-down': 'fade-in-down 0.6s ease-out',
 				'scale-in': 'scale-in 0.4s ease-out',
 				'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'marquee': 'marquee 32s linear infinite',
+				'blob-drift': 'blob-drift 18s ease-in-out infinite'
 			}
 		}
 	},

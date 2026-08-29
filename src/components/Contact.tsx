@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import Reveal from "@/components/Reveal";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -42,14 +43,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 bg-gradient-secondary relative overflow-hidden">
+    <section id="contact" className="py-32 bg-gradient-secondary relative overflow-hidden scroll-mt-20">
       {/* Background effects */}
       <div className="absolute top-1/4 left-10 w-64 h-64 bg-gradient-primary rounded-full opacity-10 blur-3xl animate-float"></div>
       <div className="absolute bottom-1/4 right-10 w-48 h-48 bg-accent rounded-full opacity-10 blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20 animate-fade-in-up">
+          <Reveal className="text-center mb-20">
             <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 glass-card rounded-full">
               <MessageSquare className="h-6 w-6 text-primary" />
               <span className="text-primary font-medium">Get In Touch</span>
@@ -61,12 +62,12 @@ const Contact = () => {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Have a project in mind? I'd love to hear from you and discuss how we can bring your ideas to life.
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Information */}
-            <div className="space-y-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-              <div className="glass-card p-10 rounded-2xl hover-lift text-center relative group">
+            <div className="space-y-8">
+              <Reveal direction="left" className="glass-card p-10 rounded-2xl fluid-card text-center relative group">
                 <div className="absolute inset-0 bg-gradient-primary rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
                 <div className="relative">
                   <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-glow">
@@ -77,16 +78,16 @@ const Contact = () => {
                   <Button 
                     variant="outline"
                     size="lg"
-                    className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover-lift animated-border"
+                    className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 fluid-card animated-border"
                     onClick={() => window.open('https://mail.google.com/mail/u/0/#inbox?compose=new', '_blank')}
                   >
                     <span className="mr-2">Send Email</span>
                     <ArrowRight className="h-5 w-5" />
                   </Button>
                 </div>
-              </div>
+              </Reveal>
 
-              <div className="glass-card p-10 rounded-2xl hover-lift text-center relative group">
+              <Reveal direction="left" delay={140} className="glass-card p-10 rounded-2xl fluid-card text-center relative group">
                 <div className="absolute inset-0 bg-gradient-primary rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
                 <div className="relative">
                   <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-glow">
@@ -97,18 +98,18 @@ const Contact = () => {
                   <Button 
                     variant="outline"
                     size="lg"
-                    className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 hover-lift animated-border"
+                    className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 fluid-card animated-border"
                     onClick={() => window.open('https://wa.me/6281223927487', '_blank')}
                   >
                     <span className="mr-2">Chat Now</span>
                     <ArrowRight className="h-5 w-5" />
                   </Button>
                 </div>
-              </div>
+              </Reveal>
             </div>
 
             {/* Contact Form */}
-            <div className="glass-card p-10 rounded-2xl hover-lift animate-scale-in" style={{animationDelay: '0.3s'}}>
+            <Reveal direction="right" delay={200} className="glass-card p-10 rounded-2xl">
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-3">
@@ -169,13 +170,13 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   size="lg"
-                  className="w-full bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow hover-lift py-6 text-lg font-medium"
+                  className="w-full bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow fluid-card py-6 text-lg font-medium"
                 >
                   <span className="mr-2">Send Message</span>
                   <Send className="h-5 w-5" />
                 </Button>
               </form>
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>

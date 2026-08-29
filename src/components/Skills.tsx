@@ -2,6 +2,7 @@ import { Code, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from 'react-router-dom'
+import Reveal from "@/components/Reveal";
 
 const Skills = () => {
   const skillCategories = [
@@ -20,14 +21,14 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-32 bg-gradient-secondary relative overflow-hidden">
+    <section id="skills" className="py-32 bg-gradient-secondary relative overflow-hidden scroll-mt-20">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
       <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-accent/20 to-transparent"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20 animate-fade-in-up">
+          <Reveal className="text-center mb-20">
             <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 glass-card rounded-full">
               <Code className="h-6 w-6 text-primary" />
               <span className="text-primary font-medium">Technical Expertise</span>
@@ -39,14 +40,15 @@ const Skills = () => {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Crafting digital experiences with modern tools and technologies
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {skillCategories.map((category, index) => (
-              <div 
-                key={index} 
-                className="glass-card p-8 rounded-2xl hover-lift animate-scale-in relative group"
-                style={{animationDelay: `${0.1 * index}s`}}
+              <Reveal
+                key={index}
+                direction="up"
+                delay={index * 140}
+                className="glass-card p-8 rounded-2xl fluid-card relative group"
               >
                 {/* Hover glow effect */}
                 <div className="absolute inset-0 bg-gradient-primary rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
@@ -75,18 +77,18 @@ const Skills = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
-          <div className="text-center">
+          <Reveal className="text-center" delay={120}>
   <Link to="/skills">
-    <Button size="lg" variant="outline" className="…">
+    <Button size="lg" variant="outline" className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 fluid-card animated-border">
       <span className="mr-2">Explore All Skills</span>
       <ArrowRight className="h-5 w-5" />
     </Button>
   </Link>
-</div>
+</Reveal>
         </div>
       </div>
     </section>
