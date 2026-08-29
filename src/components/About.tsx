@@ -1,5 +1,7 @@
 import { User, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Reveal from "@/components/Reveal";
+import Counter from "@/components/Counter";
 // import { Card } from "@/components/ui/card"; // removed because it wasn’t used
 
 const About = () => {
@@ -19,14 +21,14 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-32 bg-background relative overflow-hidden">
+    <section id="about" className="py-32 bg-background relative overflow-hidden scroll-mt-20">
       {/* Background accent */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-primary rounded-full opacity-5 blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent rounded-full opacity-5 blur-3xl"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in-up">
+          <Reveal className="text-center mb-16">
             <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 glass-card rounded-full">
               <User className="h-6 w-6 text-primary" />
               <span className="text-primary font-medium">About Me</span>
@@ -35,10 +37,10 @@ const About = () => {
               Passionate About
               <span className="gradient-text block">Creative Development</span>
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="glass-card p-8 sm:p-12 rounded-2xl hover-lift animate-scale-in">
+            <Reveal direction="left" className="glass-card p-8 sm:p-12 rounded-2xl fluid-card">
               <div className="space-y-8">
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   A student who is eager to learn new things, willing to take on challenges, and responsible in completing assigned tasks. Currently, I am deepening my knowledge in the field of Computer Science through university studies and online courses.
@@ -55,7 +57,7 @@ const About = () => {
                 <div className="pt-6">
                   <Button 
                     size="lg"
-                    className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow hover-lift px-8 py-4 text-lg font-medium"
+                    className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow fluid-card px-8 py-4 text-lg font-medium"
                     onClick={downloadCV}
                   >
                     <FileText className="h-5 w-5 mr-2" />
@@ -63,26 +65,26 @@ const About = () => {
                   </Button>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="space-y-8">
               {[
-                { label: "Years of Learning", value: "3+", desc: "Continuous learning in web development" },
-                { label: "Projects Completed", value: "3+", desc: "From concept to deployment" },
-                { label: "Technologies", value: "10+", desc: "Modern web development stack" },
-                { label: "Team Projects", value: "3+", desc: "Collaborative development experience" }
+                { label: "Years of Learning", value: 3, suffix: "+", desc: "Continuous learning in web development" },
+                { label: "Projects Completed", value: 3, suffix: "+", desc: "From concept to deployment" },
+                { label: "Technologies", value: 10, suffix: "+", desc: "Modern web development stack" },
+                { label: "Team Projects", value: 3, suffix: "+", desc: "Collaborative development experience" }
               ].map((stat, index) => (
-                <div key={index} className="glass-card p-6 rounded-xl hover-lift" style={{ animationDelay: `${0.1 * index}s` }}>
+                <Reveal key={index} direction="right" delay={index * 120} className="glass-card p-6 rounded-xl fluid-card">
                   <div className="flex items-center gap-4">
                     <div className="text-3xl font-heading font-bold gradient-text">
-                      {stat.value}
+                      <Counter value={stat.value} suffix={stat.suffix} />
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">{stat.label}</h3>
                       <p className="text-sm text-muted-foreground">{stat.desc}</p>
                     </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
