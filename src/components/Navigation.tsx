@@ -84,10 +84,12 @@ const Navigation = () => {
                 <span className="relative z-10">{item.label}</span>
               </button>
             ))}
+            <ThemeToggle className="ml-2" />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-1">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="sm"
@@ -98,6 +100,7 @@ const Navigation = () => {
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
+
         </div>
 
         {/* Mobile Navigation */}
