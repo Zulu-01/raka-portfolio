@@ -1,4 +1,5 @@
-import { Building, Github, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Building, Github, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from 'react-router-dom'
@@ -6,8 +7,11 @@ import Reveal from "@/components/Reveal";
 import hidgemsImage from "@/assets/hidgems-indo.jpg";
 import cendrawasihImage from "@/assets/cendrawasih-school.jpg";
 import elearningImage from "@/assets/elearning-app.jpg";
+import baduyAsset from "@/assets/baduy-website.png.asset.json";
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const projects = [
     {
       title: "HidGems Indo",
@@ -26,8 +30,17 @@ const Projects = () => {
       description: "A cross-platform educational application for online learning and course management",
       image: elearningImage,
       sourceLink: "https://github.com/richbruh/uas-crossplat"
+    },
+    {
+      title: "Baduy's Website",
+      description: "A website informing the public about the life, culture, and traditional values of the Baduy people, while also serving as a platform for marketing traditional Baduy products. Built with PHP, Laravel and MySQL.",
+      image: baduyAsset.url,
+      sourceLink: "https://github.com/wilbertb32/baduy_new_temporarycompleted_v3_indo"
     }
   ];
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
+
 
   return (
     <section id="projects" className="py-32 bg-background relative overflow-hidden scroll-mt-20">
