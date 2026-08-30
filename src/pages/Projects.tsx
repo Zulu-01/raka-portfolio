@@ -2,10 +2,10 @@ import { Building, Github, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import hidgemsImage from "@/assets/hidgems-indo.jpg";
 import cendrawasihImage from "@/assets/cendrawasih-school.jpg";
 import elearningImage from "@/assets/elearning-app.jpg";
+import baduyAsset from "@/assets/baduy-website.png.asset.json";
 
 const ProjectsPage = () => {
   const projects = [
@@ -26,6 +26,12 @@ const ProjectsPage = () => {
       description: "A cross-platform educational application for online learning and course management",
       image: elearningImage,
       sourceLink: "https://github.com/richbruh/uas-crossplat"
+    },
+    {
+      title: "Baduy's Website",
+      description: "A website providing the public with information on the life, culture, and traditional values of the Baduy people, alongside a platform for marketing traditional Baduy products. Built with PHP, Laravel and MySQL.",
+      image: baduyAsset.url,
+      sourceLink: "https://github.com/wilbertb32/baduy_new_temporarycompleted_v3_indo"
     }
   ];
 
@@ -87,8 +93,6 @@ const ProjectsPage = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

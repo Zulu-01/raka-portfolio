@@ -2,7 +2,6 @@ import { Code, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 
 const SkillsPage = () => {
   const skillCategories = [
@@ -88,7 +87,6 @@ const SkillsPage = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };
