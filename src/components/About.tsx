@@ -38,16 +38,17 @@ const About = () => {
             <Reveal direction="left" className="glass-card p-8 sm:p-12 rounded-2xl fluid-card">
               <div className="space-y-8">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  A student who is eager to learn new things, willing to take on challenges, and responsible in completing assigned tasks. Currently, I am deepening my knowledge in the field of Computer Science through university studies and online courses.
-                </p>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  In my studies in Computer Science, I am particularly interested in UI/UX Design and Web Development. I have a talent for Web Development, with analytical skills, creativity in designing interfaces, and an understanding of modern web technologies.
+                  A fresh graduate in Informatics who is eager to learn new things, willing to take on challenges, and responsible in completing assigned tasks. I am particularly having a strong passion in UI/UX Design, Software Engineering and Web Development.
                 </p>
 
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  I have experience in designing responsive and functional web solutions, both individually and as part of a professional team.
+                  Through both academic and personal projects, I have developed responsive and user-friendly web applications using React.js, Next.js and other modern web technologies.
                 </p>
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  I am a responsible, disciplined, inquisitive and fast-learning individual who enjoys solving problems, collaborating in teams, and continuously learning new things. I am eager to apply my technical skills and contribute to developing creative software solutions while growing professionally in the IT industry.
+                </p>
+
 
                 <div className="pt-6">
                   <Button 
