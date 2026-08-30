@@ -2,23 +2,18 @@ import { User, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
-// import { Card } from "@/components/ui/card"; // removed because it wasn’t used
+import cvAsset from "@/assets/raka-cv.pdf.asset.json";
 
 const About = () => {
   const downloadCV = () => {
-    // NOTE: Make sure the path and filename here exactly match
-    // the file in your `public` (or Assets) folder.
-    const filePath = '/Assets/CV/Raka%20Satya%20Wurya%20Andhika.pdf';
-    const fileName = 'Raka_Satya_CV.pdf';
-
-    // Create an <a> tag, set its href/download, click it
     const link = document.createElement('a');
-    link.href = filePath;
-    link.download = fileName;
+    link.href = cvAsset.url;
+    link.download = 'Raka_Satya_Wurya_Andhika_CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
+
 
   return (
     <section id="about" className="py-32 bg-background relative overflow-hidden scroll-mt-20">
