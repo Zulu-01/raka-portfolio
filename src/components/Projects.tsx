@@ -1,4 +1,5 @@
-import { Building, Github, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Building, Github, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from 'react-router-dom'
@@ -6,8 +7,11 @@ import Reveal from "@/components/Reveal";
 import hidgemsImage from "@/assets/hidgems-indo.jpg";
 import cendrawasihImage from "@/assets/cendrawasih-school.jpg";
 import elearningImage from "@/assets/elearning-app.jpg";
+import baduyAsset from "@/assets/baduy-website.png.asset.json";
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const projects = [
     {
       title: "HidGems Indo",
@@ -26,8 +30,17 @@ const Projects = () => {
       description: "A cross-platform educational application for online learning and course management",
       image: elearningImage,
       sourceLink: "https://github.com/richbruh/uas-crossplat"
+    },
+    {
+      title: "Baduy's Website",
+      description: "A website informing the public about the life, culture, and traditional values of the Baduy people, while also serving as a platform for marketing traditional Baduy products. Built with PHP, Laravel and MySQL.",
+      image: baduyAsset.url,
+      sourceLink: "https://github.com/wilbertb32/baduy_new_temporarycompleted_v3_indo"
     }
   ];
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
+
 
   return (
     <section id="projects" className="py-32 bg-background relative overflow-hidden scroll-mt-20">
@@ -55,8 +68,9 @@ const Projects = () => {
             </p>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {projects.map((project, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+            {visibleProjects.map((project, index) => (
+
               <Reveal
                 key={index}
                 direction="up"
@@ -112,17 +126,33 @@ const Projects = () => {
             ))}
           </div>
 
+          <Reveal className="text-center mb-16" delay={60}>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => setShowAll((prev) => !prev)}
+              className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 fluid-card animated-border"
+            >
+              <span className="mr-2">{showAll ? "View Less" : "View More"}</span>
+              <ChevronDown
+                className={`h-5 w-5 transition-transform duration-500 ${showAll ? "rotate-180" : ""}`}
+              />
+            </Button>
+          </Reveal>
+
           <Reveal className="text-center" delay={140}>
             <Button 
               size="lg"
+              asChild
               className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow fluid-card px-8 py-4 text-lg font-medium"
             >
               <Link to="/projects">
-    <span className="mr-2">Explore All Projects</span>
-    <ArrowRight className="h-5 w-5" />
-  </Link>
+                <span className="mr-2">Explore All Projects</span>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </Button>
           </Reveal>
+
         </div>
       </div>
     </section>

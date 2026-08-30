@@ -2,23 +2,18 @@ import { User, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
-// import { Card } from "@/components/ui/card"; // removed because it wasn’t used
+import cvAsset from "@/assets/raka-cv.pdf.asset.json";
 
 const About = () => {
   const downloadCV = () => {
-    // NOTE: Make sure the path and filename here exactly match
-    // the file in your `public` (or Assets) folder.
-    const filePath = '/Assets/CV/Raka%20Satya%20Wurya%20Andhika.pdf';
-    const fileName = 'Raka_Satya_CV.pdf';
-
-    // Create an <a> tag, set its href/download, click it
     const link = document.createElement('a');
-    link.href = filePath;
-    link.download = fileName;
+    link.href = cvAsset.url;
+    link.download = 'Raka_Satya_Wurya_Andhika_CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
+
 
   return (
     <section id="about" className="py-32 bg-background relative overflow-hidden scroll-mt-20">
@@ -43,16 +38,17 @@ const About = () => {
             <Reveal direction="left" className="glass-card p-8 sm:p-12 rounded-2xl fluid-card">
               <div className="space-y-8">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  A student who is eager to learn new things, willing to take on challenges, and responsible in completing assigned tasks. Currently, I am deepening my knowledge in the field of Computer Science through university studies and online courses.
-                </p>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  In my studies in Computer Science, I am particularly interested in UI/UX Design and Web Development. I have a talent for Web Development, with analytical skills, creativity in designing interfaces, and an understanding of modern web technologies.
+                  A fresh graduate in Informatics who is eager to learn new things, willing to take on challenges, and responsible in completing assigned tasks. I am particularly having a strong passion in UI/UX Design, Software Engineering and Web Development.
                 </p>
 
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  I have experience in designing responsive and functional web solutions, both individually and as part of a professional team.
+                  Through both academic and personal projects, I have developed responsive and user-friendly web applications using React.js, Next.js and other modern web technologies.
                 </p>
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  I am a responsible, disciplined, inquisitive and fast-learning individual who enjoys solving problems, collaborating in teams, and continuously learning new things. I am eager to apply my technical skills and contribute to developing creative software solutions while growing professionally in the IT industry.
+                </p>
+
 
                 <div className="pt-6">
                   <Button 
@@ -69,10 +65,11 @@ const About = () => {
 
             <div className="space-y-8">
               {[
-                { label: "Years of Learning", value: 3, suffix: "+", desc: "Continuous learning in web development" },
-                { label: "Projects Completed", value: 3, suffix: "+", desc: "From concept to deployment" },
+                { label: "Years of Learning", value: 4, suffix: "+", desc: "Continuous learning in web development" },
+                { label: "Projects Completed", value: 4, suffix: "+", desc: "From concept to deployment" },
                 { label: "Technologies", value: 10, suffix: "+", desc: "Modern web development stack" },
-                { label: "Team Projects", value: 3, suffix: "+", desc: "Collaborative development experience" }
+                { label: "Team Projects", value: 4, suffix: "+", desc: "Collaborative development experience" }
+
               ].map((stat, index) => (
                 <Reveal key={index} direction="right" delay={index * 120} className="glass-card p-6 rounded-xl fluid-card">
                   <div className="flex items-center gap-4">

@@ -2,21 +2,20 @@ import { Code, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 
 const SkillsPage = () => {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: ["HTML", "CSS", "Javascript", "ReactJS"]
+      skills: ["HTML", "CSS", "JavaScript", "ReactJS", "NextJS"]
     },
     {
-      title: "Backend", 
-      skills: ["PHP", "Laravel"]
+      title: "Backend",
+      skills: ["PHP", "Laravel", ".NET"]
     },
     {
       title: "Database",
-      skills: ["MySQL", "PhpMyAdmin"]
+      skills: ["PHPMyAdmin", "MySQL", "SQL Server Management Studio"]
     },
     {
       title: "Mobile",
@@ -29,8 +28,13 @@ const SkillsPage = () => {
     {
       title: "Tools",
       skills: ["GitHub", "VS Code"]
+    },
+    {
+      title: "Others",
+      skills: ["Python", "TypeScript"]
     }
   ];
+
 
   return (
     <div className="min-h-screen">
@@ -83,7 +87,6 @@ const SkillsPage = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };
