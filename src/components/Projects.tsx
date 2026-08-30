@@ -68,8 +68,9 @@ const Projects = () => {
             </p>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {projects.map((project, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+            {visibleProjects.map((project, index) => (
+
               <Reveal
                 key={index}
                 direction="up"
