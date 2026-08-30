@@ -8,15 +8,15 @@ const SkillsPage = () => {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: ["HTML", "CSS", "Javascript", "ReactJS"]
+      skills: ["HTML", "CSS", "JavaScript", "ReactJS", "NextJS"]
     },
     {
-      title: "Backend", 
-      skills: ["PHP", "Laravel"]
+      title: "Backend",
+      skills: ["PHP", "Laravel", ".NET"]
     },
     {
       title: "Database",
-      skills: ["MySQL", "PhpMyAdmin"]
+      skills: ["PHPMyAdmin", "MySQL", "SQL Server Management Studio"]
     },
     {
       title: "Mobile",
@@ -29,8 +29,13 @@ const SkillsPage = () => {
     {
       title: "Tools",
       skills: ["GitHub", "VS Code"]
+    },
+    {
+      title: "Others",
+      skills: ["Python", "TypeScript"]
     }
   ];
+
 
   return (
     <div className="min-h-screen">
