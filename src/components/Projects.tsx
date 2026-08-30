@@ -2,6 +2,7 @@ import { Building, Github, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from 'react-router-dom'
+import Reveal from "@/components/Reveal";
 import hidgemsImage from "@/assets/hidgems-indo.jpg";
 import cendrawasihImage from "@/assets/cendrawasih-school.jpg";
 import elearningImage from "@/assets/elearning-app.jpg";
@@ -29,7 +30,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-32 bg-background relative overflow-hidden">
+    <section id="projects" className="py-32 bg-background relative overflow-hidden scroll-mt-20">
       {/* Background grid pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -40,7 +41,7 @@ const Projects = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 animate-fade-in-up">
+          <Reveal className="text-center mb-20">
             <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 glass-card rounded-full">
               <Building className="h-6 w-6 text-primary" />
               <span className="text-primary font-medium">Portfolio</span>
@@ -52,14 +53,15 @@ const Projects = () => {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               A showcase of my creative development journey and technical skills
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {projects.map((project, index) => (
-              <div 
-                key={index} 
-                className="group glass-card rounded-2xl overflow-hidden hover-lift animate-scale-in"
-                style={{animationDelay: `${0.1 * index}s`}}
+              <Reveal
+                key={index}
+                direction="up"
+                delay={index * 140}
+                className="group glass-card rounded-2xl overflow-hidden fluid-card"
               >
                 <div className="aspect-video overflow-hidden relative">
                   <img
@@ -73,7 +75,7 @@ const Projects = () => {
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Button 
                       size="lg"
-                      className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow"
+                      className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow translate-y-3 group-hover:translate-y-0 transition-transform duration-500"
                       onClick={() => window.open(project.sourceLink, '_blank')}
                     >
                       <Github className="h-5 w-5 mr-2" />
@@ -106,21 +108,21 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
-          <div className="text-center animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+          <Reveal className="text-center" delay={140}>
             <Button 
               size="lg"
-              className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow hover-lift px-8 py-4 text-lg font-medium"
+              className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow fluid-card px-8 py-4 text-lg font-medium"
             >
               <Link to="/projects">
     <span className="mr-2">Explore All Projects</span>
     <ArrowRight className="h-5 w-5" />
   </Link>
             </Button>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
