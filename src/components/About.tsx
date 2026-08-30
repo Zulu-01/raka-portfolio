@@ -65,10 +65,11 @@ const About = () => {
 
             <div className="space-y-8">
               {[
-                { label: "Years of Learning", value: 3, suffix: "+", desc: "Continuous learning in web development" },
-                { label: "Projects Completed", value: 3, suffix: "+", desc: "From concept to deployment" },
+                { label: "Years of Learning", value: 4, suffix: "+", desc: "Continuous learning in web development" },
+                { label: "Projects Completed", value: 4, suffix: "+", desc: "From concept to deployment" },
                 { label: "Technologies", value: 10, suffix: "+", desc: "Modern web development stack" },
-                { label: "Team Projects", value: 3, suffix: "+", desc: "Collaborative development experience" }
+                { label: "Team Projects", value: 4, suffix: "+", desc: "Collaborative development experience" }
+
               ].map((stat, index) => (
                 <Reveal key={index} direction="right" delay={index * 120} className="glass-card p-6 rounded-xl fluid-card">
                   <div className="flex items-center gap-4">
