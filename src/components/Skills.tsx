@@ -8,17 +8,18 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend",
-      skills: ["HTML", "CSS", "Javascript", "ReactJS"]
+      skills: ["HTML", "CSS", "JavaScript", "ReactJS", "NextJS"]
     },
     {
       title: "Backend", 
-      skills: ["PHP", "Laravel"]
+      skills: ["PHP", "Laravel", ".NET"]
     },
     {
       title: "Database",
-      skills: ["MySQL", "PhpMyAdmin"]
+      skills: ["PHPMyAdmin", "MySQL", "SQL Server Management Studio"]
     }
   ];
+
 
   return (
     <section id="skills" className="py-32 bg-gradient-secondary relative overflow-hidden scroll-mt-20">
