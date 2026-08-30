@@ -126,17 +126,33 @@ const Projects = () => {
             ))}
           </div>
 
+          <Reveal className="text-center mb-16" delay={60}>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => setShowAll((prev) => !prev)}
+              className="border-2 border-muted-foreground/20 hover:border-primary hover:bg-primary/5 fluid-card animated-border"
+            >
+              <span className="mr-2">{showAll ? "View Less" : "View More"}</span>
+              <ChevronDown
+                className={`h-5 w-5 transition-transform duration-500 ${showAll ? "rotate-180" : ""}`}
+              />
+            </Button>
+          </Reveal>
+
           <Reveal className="text-center" delay={140}>
             <Button 
               size="lg"
+              asChild
               className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow fluid-card px-8 py-4 text-lg font-medium"
             >
               <Link to="/projects">
-    <span className="mr-2">Explore All Projects</span>
-    <ArrowRight className="h-5 w-5" />
-  </Link>
+                <span className="mr-2">Explore All Projects</span>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </Button>
           </Reveal>
+
         </div>
       </div>
     </section>
