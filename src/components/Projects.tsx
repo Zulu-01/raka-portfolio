@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { Building, Github, ArrowRight, ChevronDown } from "lucide-react";
+import { Building, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Link } from 'react-router-dom'
 import Reveal from "@/components/Reveal";
 import hidgemsImage from "@/assets/hidgems-indo.jpg";
 import cendrawasihImage from "@/assets/cendrawasih-school.jpg";
 import elearningImage from "@/assets/elearning-app.jpg";
 import baduyImage from "@/assets/baduy-website.png";
+
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
@@ -84,18 +83,7 @@ const Projects = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Overlay button */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button 
-                      size="lg"
-                      className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow translate-y-3 group-hover:translate-y-0 transition-transform duration-500"
-                      onClick={() => window.open(project.sourceLink, '_blank')}
-                    >
-                      <Github className="h-5 w-5 mr-2" />
-                      View Code
-                    </Button>
-                  </div>
+
                 </div>
                 
                 <div className="p-8 space-y-4">
@@ -126,7 +114,7 @@ const Projects = () => {
             ))}
           </div>
 
-          <Reveal className="text-center mb-16" delay={60}>
+          <Reveal className="text-center" delay={60}>
             <Button
               size="lg"
               variant="outline"
@@ -140,18 +128,6 @@ const Projects = () => {
             </Button>
           </Reveal>
 
-          <Reveal className="text-center" delay={140}>
-            <Button 
-              size="lg"
-              asChild
-              className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow fluid-card px-8 py-4 text-lg font-medium"
-            >
-              <Link to="/projects">
-                <span className="mr-2">Explore All Projects</span>
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </Button>
-          </Reveal>
 
         </div>
       </div>

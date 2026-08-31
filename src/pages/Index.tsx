@@ -8,24 +8,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import CursorGlow from "@/components/CursorGlow";
 import Marquee from "@/components/Marquee";
 import Reveal from "@/components/Reveal";
-
-const techStack = [
-  "HTML5",
-  "CSS3",
-  "JavaScript",
-  "ReactJS",
-  "React Native",
-  "PHP",
-  "Laravel",
-  "MySQL",
-  "PhpMyAdmin",
-  "Kotlin",
-  "Firebase",
-  "Supabase",
-  "GitHub",
-  "VS Code",
-  "UI/UX Design",
-];
+import { techStack } from "@/data/tech";
 
 const Index = () => {
   return (
@@ -38,8 +21,9 @@ const Index = () => {
       {/* Continuously scrolling tech band bridging hero and about */}
       <section aria-label="Technologies I work with" className="relative border-y border-border/40 bg-gradient-secondary">
         <Reveal direction="fade" className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <Marquee items={techStack} speed={38} />
-          <Marquee items={[...techStack].reverse()} speed={46} reverse />
+          <Marquee items={techStack} speed={44} />
+          <Marquee items={[...techStack].reverse()} speed={34} reverse />
+
         </Reveal>
       </section>
 
