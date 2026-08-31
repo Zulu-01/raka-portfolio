@@ -1,3 +1,8 @@
+import { useState } from "react";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Code2, Server, Database, Smartphone, Cloud, Wrench, Sparkles } from "lucide-react";
+import { techInfo } from "@/data/tech";
+
 interface MarqueeProps {
   items: string[];
   /** Seconds for a full loop. Higher is slower. */
@@ -5,26 +10,86 @@ interface MarqueeProps {
   reverse?: boolean;
 }
 
+const categoryIcon: Record<string, typeof Code2> = {
+  Frontend: Code2,
+  Backend: Server,
+  Database: Database,
+  Mobile: Smartphone,
+  Cloud: Cloud,
+  Tools: Wrench,
+  Others: Sparkles,
+};
+
 const Marquee = ({ items, speed = 32, reverse = false }: MarqueeProps) => {
   const track = [...items, ...items];
+  const [paused, setPaused] = useState(false);
 
   return (
     <div className="marquee-mask relative overflow-hidden py-4">
       <div
-        className="flex w-max gap-4 animate-marquee hover:[animation-play-state:paused]"
+        className="flex w-max gap-4 animate-marquee"
         style={{
           animationDuration: `${speed}s`,
           animationDirection: reverse ? "reverse" : "normal",
+          animationPlayState: paused ? "paused" : "running",
         }}
       >
-        {track.map((item, index) => (
-          <span
-            key={`${item}-${index}`}
-            className="glass-card whitespace-nowrap rounded-full px-6 py-3 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground"
-          >
-            {item}
-          </span>
-        ))}
+        {track.map((item, index) => {
+          const info = techInfo[item];
+          const Icon = info ? categoryIcon[info.category] ?? Sparkles : Sparkles;
+
+          const chip = (
+            <span
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              onFocus={() => setPaused(true)}
+              onBlur={() => setPaused(false)}
+              tabIndex={0}
+              className="glass-card cursor-help whitespace-nowrap rounded-full px-6 py-3 text-sm font-medium text-muted-foreground outline-none transition-colors duration-300 hover:text-foreground focus-visible:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {item}
+            </span>
+          );
+
+          if (!info) {
+            return <span key={`${item}-${index}`}>{chip}</span>;
+          }
+
+          return (
+            <HoverCard key={`${item}-${index}`} openDelay={120} closeDelay={80}>
+              <HoverCardTrigger asChild>{chip}</HoverCardTrigger>
+              <HoverCardContent
+                side="top"
+                align="center"
+                className="w-80 glass-card border-border/40 p-5 text-left"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-primary">
+                    <Icon className="h-5 w-5 text-primary-foreground" />
+                  </span>
+                  <div>
+                    <p className="font-heading text-base font-bold text-foreground">{info.name}</p>
+                    <p className="text-xs text-primary">{info.category}</p>
+                  </div>
+                </div>
+
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{info.summary}</p>
+
+                <div className="mt-4 space-y-2">
+                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
+                    Commonly used for
+                  </p>
+                  {info.usedFor.map((use) => (
+                    <div key={use} className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      <span className="text-sm text-muted-foreground">{use}</span>
+                    </div>
+                  ))}
+                </div>
+              </HoverCardContent>
+            </HoverCard>
+          );
+        })}
       </div>
     </div>
   );
