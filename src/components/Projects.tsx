@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { Building, Github, ArrowRight, ChevronDown } from "lucide-react";
+import { Building, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Link } from 'react-router-dom'
 import Reveal from "@/components/Reveal";
 import hidgemsImage from "@/assets/hidgems-indo.jpg";
 import cendrawasihImage from "@/assets/cendrawasih-school.jpg";
 import elearningImage from "@/assets/elearning-app.jpg";
 import baduyImage from "@/assets/baduy-website.png";
+
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
