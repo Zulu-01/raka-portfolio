@@ -2,12 +2,11 @@ import { User, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
-import cvAsset from "@/assets/raka-cv.pdf.asset.json";
 
 const About = () => {
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = cvAsset.url;
+    link.href = '/cv/Raka_Satya_Wurya_Andhika_CV.pdf';
     link.download = 'Raka_Satya_Wurya_Andhika_CV.pdf';
     document.body.appendChild(link);
     link.click();
