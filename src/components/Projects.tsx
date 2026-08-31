@@ -115,7 +115,7 @@ const Projects = () => {
             ))}
           </div>
 
-          <Reveal className="text-center mb-16" delay={60}>
+          <Reveal className="text-center" delay={60}>
             <Button
               size="lg"
               variant="outline"
@@ -129,18 +129,6 @@ const Projects = () => {
             </Button>
           </Reveal>
 
-          <Reveal className="text-center" delay={140}>
-            <Button 
-              size="lg"
-              asChild
-              className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow fluid-card px-8 py-4 text-lg font-medium"
-            >
-              <Link to="/projects">
-                <span className="mr-2">Explore All Projects</span>
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </Button>
-          </Reveal>
 
         </div>
       </div>

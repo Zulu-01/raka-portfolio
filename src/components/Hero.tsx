@@ -38,27 +38,19 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen relative flex items-center overflow-hidden">
-      {/* Cycling Background Images with parallax drift */}
+    <section id="home" className="min-h-screen relative flex items-center overflow-hidden bg-background">
+      {/* Colour orbs pinballing off the walls of this section, like a closed box */}
       <div
         className="absolute inset-0 will-change-transform"
-        style={{ transform: `translate3d(0, ${scrollY * 0.25}px, 0) scale(1.06)` }}
+        style={{ transform: `translate3d(0, ${scrollY * 0.12}px, 0)` }}
       >
-        {backgroundImages.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-[1400ms] ease-out ${
-              index === currentImageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-            }`}
-            style={{ backgroundImage: `url(${image})` }}
-          />
-        ))}
+        <PinballOrbs />
       </div>
 
       {/* Dotted grid + gradient overlays */}
       <div className="absolute inset-0 grid-backdrop opacity-40"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/50 to-transparent"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent"></div>
+
 
       {/* Drifting ambient blobs */}
       <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] bg-gradient-primary rounded-full opacity-20 blur-3xl animate-blob-drift"></div>
