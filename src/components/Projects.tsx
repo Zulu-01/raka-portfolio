@@ -84,18 +84,7 @@ const Projects = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Overlay button */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button 
-                      size="lg"
-                      className="bg-gradient-primary hover:opacity-90 text-white border-0 shadow-glow translate-y-3 group-hover:translate-y-0 transition-transform duration-500"
-                      onClick={() => window.open(project.sourceLink, '_blank')}
-                    >
-                      <Github className="h-5 w-5 mr-2" />
-                      View Code
-                    </Button>
-                  </div>
+
                 </div>
                 
                 <div className="p-8 space-y-4">

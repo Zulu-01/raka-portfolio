@@ -2,15 +2,9 @@ import { Instagram, Github, Linkedin, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Reveal from "@/components/Reveal";
+import PinballOrbs from "@/components/PinballOrbs";
 
 const profilePhoto = "/lovable-uploads/d1ee4d0f-a426-4212-860e-2fc4d34f59bb.png";
-
-const backgroundImages = [
-  "/lovable-uploads/c4c477af-8ed5-4d69-81c3-1eef01ea4705.png",
-  "/lovable-uploads/2aa01748-52de-4804-bd2f-344aa8fc89c6.png",
-  "/lovable-uploads/b9499521-37ec-48ab-81c3-3c2364615681.png",
-  "/lovable-uploads/9f88c9f4-8888-4776-b662-60964f30ce6d.png"
-];
 
 const socials = [
   { label: "Instagram", icon: Instagram, url: "https://www.instagram.com/raka_s.w.a.t/" },
@@ -19,18 +13,8 @@ const socials = [
 ];
 
 const Hero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        (prevIndex + 1) % backgroundImages.length
-      );
-    }, 4000); // Change image every 4 seconds
-
-    return () => clearInterval(interval);
-  }, []);
 
   // Gentle parallax: background drifts slower than the content
   useEffect(() => {
