@@ -1,4 +1,4 @@
-import { Instagram, Github, Linkedin, ArrowDown } from "lucide-react";
+import { Instagram, Github, Linkedin, MessageCircle, Mail, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import Reveal from "@/components/Reveal";
@@ -9,7 +9,9 @@ const profilePhoto = "/lovable-uploads/d1ee4d0f-a426-4212-860e-2fc4d34f59bb.png"
 const socials = [
   { label: "Instagram", icon: Instagram, url: "https://www.instagram.com/raka_s.w.a.t/" },
   { label: "GitHub", icon: Github, url: "https://github.com/Zulu-11" },
-  { label: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/raka-satya-wurya-andhika-63873932a/" }
+  { label: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/raka-satya-wurya-andhika-63873932a/" },
+  { label: "WhatsApp", icon: MessageCircle, url: "https://wa.me/+6281223927487" },
+  { label: "Email", icon: Mail, url: "https://mail.google.com/mail/u/0/?view=cm&to=rakaicha1@gmail.com" }
 ];
 
 const Hero = () => {
