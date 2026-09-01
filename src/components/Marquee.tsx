@@ -1,5 +1,4 @@
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Code2, Server, Database, Smartphone, Cloud, Wrench, Sparkles } from "lucide-react";
 import { techInfo } from "@/data/tech";
 
