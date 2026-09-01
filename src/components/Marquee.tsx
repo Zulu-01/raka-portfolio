@@ -55,7 +55,7 @@ const Marquee = ({ items, speed = 32, reverse = false }: MarqueeProps) => {
               <HoverCardContent
                 side="top"
                 align="center"
-                className="w-80 border-border/40 bg-popover/95 p-5 text-left shadow-deep backdrop-blur-xl"
+                className="w-80 border-border/60 bg-popover p-5 text-left shadow-deep"
               >
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-primary">
