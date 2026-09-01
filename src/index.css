@@ -292,3 +292,11 @@ All colors MUST be HSL.
     transform: scaleX(1);
   }
 }
+
+@layer components {
+  /* The marquee only halts while the pointer rests on a technology chip */
+  .marquee-track:has(.marquee-chip:hover),
+  .marquee-track:has(.marquee-chip:focus-visible) {
+    animation-play-state: paused;
+  }
+}

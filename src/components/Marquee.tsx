@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Code2, Server, Database, Smartphone, Cloud, Wrench, Sparkles } from "lucide-react";
 import { techInfo } from "@/data/tech";
@@ -22,16 +21,14 @@ const categoryIcon: Record<string, typeof Code2> = {
 
 const Marquee = ({ items, speed = 32, reverse = false }: MarqueeProps) => {
   const track = [...items, ...items];
-  const [paused, setPaused] = useState(false);
 
   return (
     <div className="marquee-mask relative overflow-hidden py-4">
       <div
-        className="flex w-max gap-4 animate-marquee"
+        className="marquee-track flex w-max gap-4 animate-marquee"
         style={{
           animationDuration: `${speed}s`,
           animationDirection: reverse ? "reverse" : "normal",
-          animationPlayState: paused ? "paused" : "running",
         }}
       >
         {track.map((item, index) => {
@@ -40,16 +37,13 @@ const Marquee = ({ items, speed = 32, reverse = false }: MarqueeProps) => {
 
           const chip = (
             <span
-              onMouseEnter={() => setPaused(true)}
-              onMouseLeave={() => setPaused(false)}
-              onFocus={() => setPaused(true)}
-              onBlur={() => setPaused(false)}
               tabIndex={0}
-              className="glass-card cursor-help whitespace-nowrap rounded-full px-6 py-3 text-sm font-medium text-muted-foreground outline-none transition-colors duration-300 hover:text-foreground focus-visible:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
+              className="marquee-chip glass-card cursor-help whitespace-nowrap rounded-full px-6 py-3 text-sm font-medium text-muted-foreground outline-none transition-colors duration-300 hover:text-foreground focus-visible:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
             >
               {item}
             </span>
           );
+
 
           if (!info) {
             return <span key={`${item}-${index}`}>{chip}</span>;
@@ -61,7 +55,7 @@ const Marquee = ({ items, speed = 32, reverse = false }: MarqueeProps) => {
               <HoverCardContent
                 side="top"
                 align="center"
-                className="w-80 glass-card border-border/40 p-5 text-left"
+                className="w-80 border-border/60 bg-popover p-5 text-left shadow-deep"
               >
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-primary">
