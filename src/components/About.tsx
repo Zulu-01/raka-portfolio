@@ -1,9 +1,44 @@
-import { User, FileText } from "lucide-react";
+import { useEffect, useState } from "react";
+import { User, FileText, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
+import { cn } from "@/lib/utils";
+
+const stats = [
+  { label: "Years of Learning", value: 4, suffix: "+", desc: "Continuous learning in web development" },
+  { label: "Projects Completed", value: 4, suffix: "+", desc: "From concept to deployment" },
+  { label: "Technologies", value: 10, suffix: "+", desc: "Modern web development stack" },
+  { label: "Team Projects", value: 4, suffix: "+", desc: "Collaborative development experience" },
+];
+
+const education = [
+  {
+    school: "Universitas Multimedia Nusantara",
+    major: "Informatics",
+    detail: "Current GPA: 3.26",
+    period: "2022 — 2026",
+  },
+  {
+    school: "SMAN 85 Jakarta",
+    major: "Science Major (MIA)",
+    detail: "Grade: 80,32",
+    period: "2019 — 2022",
+  },
+];
+
+const SLIDE_DURATION = 7000;
 
 const About = () => {
+  const [slide, setSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = window.setTimeout(() => setSlide((s) => (s + 1) % 2), SLIDE_DURATION);
+    return () => window.clearTimeout(id);
+  }, [slide, paused]);
+
   const downloadCV = () => {
     const link = document.createElement('a');
     link.href = '/cv/Raka_Satya_Wurya_Andhika_CV.pdf';
