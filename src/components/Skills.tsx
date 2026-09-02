@@ -39,30 +39,8 @@ const Skills = () => {
             <SkillsMindMap categories={skillCategories} />
           </Reveal>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {skillCategories.map((category, index) => (
-              <Reveal
-                key={category.title}
-                direction="up"
-                delay={index * 90}
-                className="glass-card fluid-card group relative rounded-2xl p-6"
-              >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-0 transition-opacity duration-500 group-hover:opacity-5" />
-                <h3 className="relative font-heading text-lg font-bold text-foreground">{category.title}</h3>
-                <div className="relative mt-4 flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-border/60 bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground transition-colors duration-300 hover:border-primary/50 hover:text-foreground"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
+
       </div>
     </section>
   );
