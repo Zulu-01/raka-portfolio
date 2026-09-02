@@ -300,3 +300,15 @@ All colors MUST be HSL.
     animation-play-state: paused;
   }
 }
+
+@layer utilities {
+  @keyframes mindmap-flow {
+    to {
+      stroke-dashoffset: -12;
+    }
+  }
+
+  .mindmap-flow {
+    animation: mindmap-flow 1.2s linear infinite;
+  }
+}
