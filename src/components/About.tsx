@@ -97,27 +97,94 @@ const About = () => {
               </div>
             </Reveal>
 
-            <div className="space-y-8">
-              {[
-                { label: "Years of Learning", value: 4, suffix: "+", desc: "Continuous learning in web development" },
-                { label: "Projects Completed", value: 4, suffix: "+", desc: "From concept to deployment" },
-                { label: "Technologies", value: 10, suffix: "+", desc: "Modern web development stack" },
-                { label: "Team Projects", value: 4, suffix: "+", desc: "Collaborative development experience" }
+            <div
+              className="space-y-6"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
+              <div className="relative min-h-[520px]">
+                {/* Sub-page 1 — quick stats */}
+                <div
+                  className={cn(
+                    "space-y-8 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                    slide === 0
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 -translate-y-4 pointer-events-none absolute inset-0"
+                  )}
+                  aria-hidden={slide !== 0}
+                >
+                  {stats.map((stat, index) => (
+                    <Reveal key={stat.label} direction="right" delay={index * 120} className="glass-card p-6 rounded-xl fluid-card">
+                      <div className="flex items-center gap-4">
+                        <div className="text-3xl font-heading font-bold gradient-text">
+                          <Counter value={stat.value} suffix={stat.suffix} />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-1">{stat.label}</h3>
+                          <p className="text-sm text-muted-foreground">{stat.desc}</p>
+                        </div>
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
 
-              ].map((stat, index) => (
-                <Reveal key={index} direction="right" delay={index * 120} className="glass-card p-6 rounded-xl fluid-card">
-                  <div className="flex items-center gap-4">
-                    <div className="text-3xl font-heading font-bold gradient-text">
-                      <Counter value={stat.value} suffix={stat.suffix} />
+                {/* Sub-page 2 — education timeline */}
+                <div
+                  className={cn(
+                    "transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                    slide === 1
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4 pointer-events-none absolute inset-0"
+                  )}
+                  aria-hidden={slide !== 1}
+                >
+                  <div className="glass-card rounded-2xl p-6 sm:p-8 fluid-card">
+                    <div className="flex items-center gap-3 mb-8">
+                      <GraduationCap className="h-5 w-5 text-primary" />
+                      <span className="text-xs font-medium tracking-[0.2em] uppercase text-muted-foreground">
+                        Education
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">{stat.label}</h3>
-                      <p className="text-sm text-muted-foreground">{stat.desc}</p>
+
+                    <div className="relative pl-6 space-y-8 before:absolute before:left-0 before:top-2 before:bottom-2 before:w-px before:bg-gradient-primary">
+                      {education.map((item) => (
+                        <div key={item.school} className="relative">
+                          <span className="absolute -left-[1.6rem] top-2 h-3 w-3 rounded-full bg-gradient-primary shadow-glow" />
+                          <div className="flex flex-wrap items-baseline justify-between gap-2">
+                            <h3 className="font-heading font-semibold text-foreground">{item.school}</h3>
+                            <span className="text-xs text-muted-foreground font-mono">{item.period}</span>
+                          </div>
+                          <p className="text-sm text-primary mt-1">{item.major}</p>
+                          <p className="text-sm text-muted-foreground mt-1">{item.detail}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                </Reveal>
-              ))}
+                </div>
+              </div>
+
+              {/* Manual controls */}
+              <div className="flex items-center justify-center gap-3">
+                {["Highlights", "Education"].map((label, index) => (
+                  <button
+                    key={label}
+                    type="button"
+                    onClick={() => setSlide(index)}
+                    aria-label={`Show ${label}`}
+                    aria-current={slide === index}
+                    className={cn(
+                      "px-4 py-2 rounded-full text-xs font-medium transition-all duration-300",
+                      slide === index
+                        ? "bg-gradient-primary text-white shadow-glow"
+                        : "glass-card text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
+
           </div>
         </div>
       </div>
