@@ -90,13 +90,18 @@ const Hero = () => {
             {/* Social Links */}
             <Reveal direction="up" delay={480}>
               <div className="flex items-center space-x-4 pt-4">
-                {socials.map(({ label, icon: Icon, url }) => (
+                {socials.map(({ label, icon: Icon, url, color, colorTo }, i) => (
                   <Button
                     key={label}
                     variant="ghost"
                     size="icon"
                     aria-label={label}
-                    className="w-12 h-12 rounded-xl hover:bg-muted/20 glass-card fluid-card"
+                    className="w-12 h-12 rounded-xl hover:bg-muted/20 glass-card fluid-card social-glow"
+                    style={{
+                      "--glow-a": color,
+                      "--glow-b": colorTo,
+                      animationDelay: `${i * 0.9}s`,
+                    } as React.CSSProperties}
                     onClick={() => window.open(url, '_blank')}
                   >
                     <Icon className="h-5 w-5" />
