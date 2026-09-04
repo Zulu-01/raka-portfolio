@@ -32,6 +32,7 @@ const Index = () => {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 };
