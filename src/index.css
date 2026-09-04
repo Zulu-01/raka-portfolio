@@ -312,3 +312,29 @@ All colors MUST be HSL.
     animation: mindmap-flow 1.2s linear infinite;
   }
 }
+
+/* Social icon brand-colour glow — cycles between two brand colours */
+@keyframes social-glow-cycle {
+  0%, 100% {
+    color: var(--glow-a);
+    box-shadow: 0 0 10px 0 color-mix(in srgb, var(--glow-a) 55%, transparent),
+                inset 0 0 6px 0 color-mix(in srgb, var(--glow-a) 25%, transparent);
+    border-color: color-mix(in srgb, var(--glow-a) 45%, transparent);
+  }
+  50% {
+    color: var(--glow-b);
+    box-shadow: 0 0 22px 2px color-mix(in srgb, var(--glow-b) 70%, transparent),
+                inset 0 0 10px 0 color-mix(in srgb, var(--glow-b) 35%, transparent);
+    border-color: color-mix(in srgb, var(--glow-b) 65%, transparent);
+  }
+}
+
+.social-glow {
+  animation: social-glow-cycle 3.2s ease-in-out infinite;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  will-change: box-shadow;
+}
+.social-glow:hover {
+  transform: translateY(-3px) scale(1.06);
+  animation-duration: 1.4s;
+}
