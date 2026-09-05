@@ -38,11 +38,11 @@ const Footer = () => {
           {/* Back to top */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="group inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card fluid-card text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+            className="group inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card fluid-card text-sm text-muted-foreground hover:text-foreground transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[var(--shadow-glow)]"
             aria-label="Back to top"
           >
             <span>Back to top</span>
-            <ArrowUp className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-1" />
+            <ArrowUp className="h-4 w-4 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5" />
           </button>
         </div>
       </div>
